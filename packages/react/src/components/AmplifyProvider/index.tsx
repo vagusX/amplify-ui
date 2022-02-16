@@ -24,10 +24,12 @@ export function AmplifyProvider({
   React.useEffect(() => {
     if (document && document.documentElement) {
       document.documentElement.setAttribute('data-amplify-theme', name);
-      document.documentElement.setAttribute(
-        'data-amplify-color-mode',
-        colorMode
-      );
+      if (colorMode) {
+        document.documentElement.setAttribute(
+          'data-amplify-color-mode',
+          colorMode
+        );
+      }
     }
   }, [theme, colorMode]);
   return (
