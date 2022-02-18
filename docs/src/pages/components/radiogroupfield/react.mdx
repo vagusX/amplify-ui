@@ -1,14 +1,14 @@
 import { Flex, Radio, RadioGroupField } from '@aws-amplify/ui-react';
 
-import { ControlledRadioGroupField, Demo } from './demo';
+import { RadioGroupFieldDemo } from './demo';
 import { Example } from '@/components/Example';
 import { Fragment } from '@/components/Fragment';
 
 A RadioGroupField allows users to select a single option from a list of mutually exclusive options.
 
-<Example>
-  <Demo />
-</Example>
+## Demo
+
+<RadioGroupFieldDemo />
 
 ## Usage
 
@@ -58,10 +58,6 @@ const [value, setValue] = useState('html');
   <Radio value="javascript">javascript</Radio>
 </RadioGroupField>;
 ```
-
-<Example>
-  <ControlledRadioGroupField />
-</Example>
 
 ### Accessibility / Label behavior
 

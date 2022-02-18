@@ -1,10 +1,14 @@
-import { RadioGroupFieldProps } from '@aws-amplify/ui-react';
+import { RadioGroupFieldProps, RadioProps } from '@aws-amplify/ui-react';
 import { useState } from 'react';
 
 import { RadioGroupFieldPropControlsProps } from './RadioGroupFieldPropControls';
 
 interface UseRadioGroupFieldProps {
-  (initialValues?: RadioGroupFieldProps): RadioGroupFieldPropControlsProps;
+  (
+    initialValues?: RadioGroupFieldProps & {
+      labelPosition?: RadioProps['labelPosition'];
+    }
+  ): RadioGroupFieldPropControlsProps;
 }
 
 export const useRadioGroupFieldProps: UseRadioGroupFieldProps = (
@@ -25,17 +29,22 @@ export const useRadioGroupFieldProps: UseRadioGroupFieldProps = (
   const [size, setSize] = useState<RadioGroupFieldProps['size']>(
     initialValues.size
   );
+  const [labelPosition, setLabelPosition] = useState<
+    RadioProps['labelPosition']
+  >(initialValues.labelPosition);
 
   return {
     ...initialValues,
     direction,
     label,
+    labelPosition,
     name,
     size,
     isDisabled,
     setDirection,
     setIsDisabled,
     setLabel,
+    setLabelPosition,
     setName,
     setSize,
   };

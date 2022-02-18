@@ -48,7 +48,9 @@ export const Demo = ({
             <TabItem title="Props">
               <View padding={`${tokens.space.medium} 0`}>{propControls}</View>
             </TabItem>
-            {themeControls ?? <TabItem title="Theme">{themeControls}</TabItem>}
+            {themeControls ? (
+              <TabItem title="Theme">{themeControls}</TabItem>
+            ) : null}
           </Tabs>
         </Flex>
         <View

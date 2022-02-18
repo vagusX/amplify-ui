@@ -9,7 +9,16 @@ import { Text } from '../Text';
 import { useRadioGroupContext } from '../RadioGroupField/context';
 
 export const RadioPrimitive: Primitive<RadioProps, 'input'> = (
-  { children, className, id, isDisabled, testId, value, ...rest },
+  {
+    children,
+    className,
+    id,
+    isDisabled,
+    testId,
+    value,
+    labelPosition,
+    ...rest
+  },
   ref
 ) => {
   const {
@@ -39,6 +48,7 @@ export const RadioPrimitive: Primitive<RadioProps, 'input'> = (
       as="label"
       className={classNames(ComponentClassNames.Radio, className)}
       data-disabled={shouldBeDisabled}
+      data-label-position={labelPosition}
     >
       <Input
         checked={checked}
