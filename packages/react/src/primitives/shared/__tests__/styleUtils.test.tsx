@@ -373,7 +373,7 @@ describe('useTransformStyleProps', () => {
 
 describe('splitPrimitiveProps', () => {
   it('should split props into base, flex and rest', () => {
-    const baseStyleProps: BaseStyleProps = {
+    const baseStyleProps = {
       backgroundColor: 'yellow',
       alignSelf: 'baseline',
       area: 'auto',
@@ -381,7 +381,7 @@ describe('splitPrimitiveProps', () => {
       border: '1px solid black',
       borderRadius: '2px',
     };
-    const flexContainerStyleProps: FlexContainerStyleProps = {
+    const flexContainerStyleProps = {
       alignContent: 'space-around',
       alignItems: 'baseline',
       columnGap: '2rem',
@@ -390,6 +390,7 @@ describe('splitPrimitiveProps', () => {
       justifyContent: 'space-around',
       rowGap: '4rem',
       wrap: 'nowrap',
+      width: '200px',
     };
     const restProps = {
       type: 'textarea',

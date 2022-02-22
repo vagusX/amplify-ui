@@ -162,11 +162,16 @@ export const useNonStyleProps = (props: ViewProps) => {
 /**
  * Map of all the FlexContainerStyleProps type keys
  * The type requires all keys in order to ensure it remains
- * in sync with the FlexContainerStyleProps type.
+ * in sync with the FlexContainerStyleProps type. With the exception
+ * of the 'width' property which is treated as a special case.
+ * Width should apply to the container rather than the input or else
+ * there will be weird cases of floating buttons.
  */
-const FlexContainerStylePropsMap: Required<{
-  [key in keyof FlexContainerStyleProps]: true;
-}> = {
+const FlexContainerStylePropsMap: Required<
+  {
+    [key in keyof FlexContainerStyleProps]: true;
+  } & { width: true }
+> = {
   alignContent: true,
   alignItems: true,
   direction: true,
@@ -175,14 +180,17 @@ const FlexContainerStylePropsMap: Required<{
   wrap: true,
   columnGap: true,
   rowGap: true,
+  width: true,
 };
 
 /**
- * Map of all the FlexContainerStyleProps type keys
+ * Map of all the BaseStyleProps type keys
  * The type requires all keys in order to ensure it remains
- * in sync with the FlexContainerStyleProps type.
+ * in sync with the BaseStyleProps type.
  */
-const BaseStylePropsMap: Required<{ [key in keyof BaseStyleProps]: true }> = {
+const BaseStylePropsMap: Required<{
+  [key in keyof Omit<BaseStyleProps, 'width'>]: true;
+}> = {
   alignSelf: true,
   area: true,
   backgroundColor: true,
@@ -230,7 +238,6 @@ const BaseStylePropsMap: Required<{ [key in keyof BaseStyleProps]: true }> = {
   top: true,
   transform: true,
   transformOrigin: true,
-  width: true,
   whiteSpace: true,
 };
 
