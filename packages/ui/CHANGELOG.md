@@ -1,5 +1,11 @@
 # @aws-amplify/ui
 
+## 3.0.16
+
+### Patch Changes
+
+- [#1415](https://github.com/aws-amplify/amplify-ui/pull/1415) [`74e066622`](https://github.com/aws-amplify/amplify-ui/commit/74e066622e9abe26e9f9427f6bdc82c4e14d4952) Thanks [@dbanksdesign](https://github.com/dbanksdesign)! - Fixing checkbox `labelPosition` to position the label correctly. Now `labelPosition="start"` actually means _start_.
+
 ## 3.0.15
 
 ### Patch Changes

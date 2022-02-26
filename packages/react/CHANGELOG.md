@@ -1,5 +1,14 @@
 # @aws-amplify/ui-react
 
+## 2.6.3
+
+### Patch Changes
+
+- [#1415](https://github.com/aws-amplify/amplify-ui/pull/1415) [`74e066622`](https://github.com/aws-amplify/amplify-ui/commit/74e066622e9abe26e9f9427f6bdc82c4e14d4952) Thanks [@dbanksdesign](https://github.com/dbanksdesign)! - Fixing checkbox `labelPosition` to position the label correctly. Now `labelPosition="start"` actually means _start_.
+
+- Updated dependencies [[`74e066622`](https://github.com/aws-amplify/amplify-ui/commit/74e066622e9abe26e9f9427f6bdc82c4e14d4952)]:
+  - @aws-amplify/ui@3.0.16
+
 ## 2.6.2
 
 ### Patch Changes
